@@ -8,6 +8,7 @@ RUN yum install -y epel-release && \
     yum install -y \
     sudo \
     gcc-c++ \
+    glibc-devel \
     glibc-devel.i686 \
     libgcc.i686 \
     libstdc++.i686 \
