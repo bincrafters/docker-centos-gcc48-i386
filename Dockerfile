@@ -20,6 +20,7 @@ RUN yum install -y epel-release && \
     yum clean all && \
     rm -rf /var/cache/yum && \
     curl https://cmake.org/files/v3.10/cmake-${CMAKE_VERSION}-Linux-x86_64.tar.gz | tar -xz && \
+    pip install -q --no-cache-dir --upgrade pip setuptools && \
     pip install -q --no-cache-dir conan && \
     groupadd 1001 -g 1001 && \
     groupadd 1000 -g 1000 && \
