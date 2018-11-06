@@ -1,4 +1,4 @@
-FROM centos:7.4.1708
+FROM centos/python-36-centos7
 MAINTAINER SSE4 <tomskside@gmail.com>
 
 ENV CMAKE_VERSION=3.10.2
@@ -16,6 +16,7 @@ RUN yum install -y epel-release && \
     file \
     python-pip \
     python-wheel && \
+    yum remove -y cmake && \
     yum upgrade -y python-setuptools && \
     yum clean all && \
     rm -rf /var/cache/yum && \
@@ -35,4 +36,4 @@ WORKDIR /home/conan
 
 RUN mkdir -p /home/conan/.conan
 
-ENV PATH=$PATH:/cmake-${CMAKE_VERSION}-Linux-x86_64/bin
+ENV PATH=$PATH:/opt/app-root/src/cmake-${CMAKE_VERSION}-Linux-x86_64/bin
